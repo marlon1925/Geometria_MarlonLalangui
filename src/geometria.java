@@ -1,10 +1,13 @@
 import java.util.Scanner;
 public class geometria {
 
-    double areaCir, areaCuadra, areaRombo;
-    double altura, base, D, d, radio;
+    private double areaCir, areaCuadra, areaRombo;
+    private double altura, base, D, d, radio;
 
-    double diametro;
+    private double numLados;
+
+    private double aux;
+    private double diametro;
     private double PI;
     Scanner sc = new Scanner(System.in);
     public geometria() {
@@ -17,6 +20,7 @@ public class geometria {
         d = 0;
         PI = 3.1416;
         diametro = 0;
+        aux = 0;
     }
     public int menu(){
         int op=0;
@@ -35,13 +39,44 @@ public class geometria {
         return op;
     }
     double areaCircu() {
+        System.out.println("AREA DEL CIRCULO");
+        System.out.println("Ingrese el radio del circulo");
+        radio = sc.nextDouble();
+        setRadio(radio);
         areaCir = PI * (radio*radio);
+        System.out.println("La area del circulo es: " + areaCir + "\n");
         return areaCir;
     }
-    double perimetroCircu(){
+    public void perimetroCirculo(){
+        System.out.print("Ingrese el diametro: ");
+        setDiametro(diametro = sc.nextDouble());
+        aux =  PI * diametro;
+        System.out.println("Resultado: " + aux);
+    }
+
+    public void volumenCirculo(){
+        System.out.print("Ingrese el diametro: ");
+        setDiametro(diametro = sc.nextDouble());
+        aux = (4/3) * PI * (radio*radio*radio);
+        System.out.println("Resultado: " + volumenCircu());
+    }
+
+    public void areaCuadrado() {
+        for (int i = 0; i < 4; i++){
+            System.out.print("Ingrese el valor del lado " + (i+1) + " : " );
+            setDiametro(diametro = sc.nextDouble());
+        }
+
+        System.out.println("Resultado: " + volumenCircu());
+        areaCuadra = base * altura;
+    }
+    double perimetroCuadra(){
         return PI * diametro;
     }
 
+    double volumenCircu(){
+        return (4/3) * PI * (radio*radio*radio);
+    }
     public double getAreaCir() {
         return areaCir;
     }

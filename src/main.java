@@ -11,15 +11,11 @@ public class main {
             switch (op) {
                 case 1:
                     System.out.println("AREA DEL CIRCULO");
-                    System.out.println("Ingrese el radio del circulo");
-                    geo.radio = geo.sc.nextDouble();
-                    geo.setRadio(geo.radio);
                     geo.areaCircu();
-                    System.out.println("La area del circulo es: " + geo.areaCir + "\n");
                     System.out.println("PERIMETRO DEL CIRCULO");
-                    System.out.print("Ingrese el diametro: ");
-                    geo.setDiametro(geo.diametro = geo.sc.nextDouble());
-                    System.out.println("Resultado: " + geo.perimetroCircu());
+                    geo.perimetroCircu();
+                    System.out.println("VOLUMEN DEL CIRCULO");
+                    geo.volumenCirculo();
                     break;
             }
         }while(op != 0);
